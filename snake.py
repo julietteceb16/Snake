@@ -1,7 +1,5 @@
 """Snake, classic arcade game.
-
 Exercises
-
 Uno de los dos hará que:
 1.- La comida podrá moverse al azar un paso a la vez y no deberá de salirse de la ventana
 2.- Cada vez que se corra el juego, la víbora y la comida deberán tener colores diferentes 
@@ -15,6 +13,7 @@ from freegames import square, vector
 colores = ["Blue", "magenta", "green", "pink", "grey", 'orange', 'purple', 'yellow', 'turquoise', 'skyblue']
 """Random para elegir el color de la serpiente"""
 numero = randrange(5)
+colores.pop(numero)
 """Random para elegir el color de la comida"""
 numero2 = randrange(5)
 
