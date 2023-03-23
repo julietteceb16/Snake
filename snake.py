@@ -12,7 +12,7 @@ from random import randrange
 from turtle import *
 from freegames import square, vector
 """Colores para la serpiente y la comida"""
-colores = ["Blue", "magenta", "green", "pink", "grey" ]
+colores = ["Blue", "magenta", "green", "pink", "grey", 'orange', 'purple', 'yellow', 'turquoise', 'skyblue']
 """Random para elegir el color de la serpiente"""
 numero = randrange(5)
 """Random para elegir el color de la comida"""
