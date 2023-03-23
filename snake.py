@@ -2,16 +2,21 @@
 
 Exercises
 
-1. How do you make the snake faster or slower?
-2. How can you make the snake go around the edges?
-3. How would you move the food?
-4. Change the snake to respond to mouse clicks.
+Uno de los dos hará que:
+1.- La comida podrá moverse al azar un paso a la vez y no deberá de salirse de la ventana
+2.- Cada vez que se corra el juego, la víbora y la comida deberán tener colores diferentes 
+entre sí, pero al azar, de una serie de 5 diferentes colores, excepto el rojo.
 """
 
 from random import randrange
 from turtle import *
-
 from freegames import square, vector
+"""Colores para la serpiente y la comida"""
+colores = ["Blue", "magenta", "green", "pink", "grey" ]
+"""Random para elegir el color de la serpiente"""
+numero = randrange(5)
+"""Random para elegir el color de la comida"""
+numero2 = randrange(5)
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
@@ -49,11 +54,9 @@ def move():
         snake.pop(0)
 
     clear()
-
     for body in snake:
-        square(body.x, body.y, 9, 'black')
-
-    square(food.x, food.y, 9, 'green')
+        square(body.x, body.y, 9, colores[numero])
+    square(food.x, food.y, 9, colores[numero2])
     update()
     ontimer(move, 100)
 
