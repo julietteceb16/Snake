@@ -33,7 +33,16 @@ def inside(head):
     """Return True if head inside boundaries."""
     return -200 < head.x < 190 and -200 < head.y < 190
 
+def random_food():
+    """Randomizes the position of the food by one square wleaving the window"""
+    if food.x >= -150 and food.x <=150:#dirección x
+        food.x += randrange(-1,2) * 10
 
+    if food.x >= -150 and food.x <=150:#dirección y
+        food.x += randrange(-1,2) * 10
+
+
+    
 def move():
     """Move snake forward one segment."""
     head = snake[-1].copy()
@@ -59,6 +68,7 @@ def move():
     square(food.x, food.y, 9, colores[numero2])
     update()
     ontimer(move, 100)
+
 
 
 setup(420, 420, 370, 0)
