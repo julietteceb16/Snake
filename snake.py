@@ -35,10 +35,11 @@ def inside(head):
 
 def random_food():
     """Randomizes the position of the food by one square wleaving the window"""
-    if food.x >= -150 and food.x <=150:#dirección x
+    #Esta función permititirá que la comida pueda moverse de manera random 
+    if food.x >= -150 and food.x <=150:#Se mueve en dirección x
         food.x += randrange(-1,2) * 10
 
-    if food.x >= -150 and food.x <=150:#dirección y
+    if food.x >= -150 and food.x <=150:#Se mueve en dirección y
         food.x += randrange(-1,2) * 10
 
 
