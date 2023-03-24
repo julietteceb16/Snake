@@ -39,8 +39,8 @@ def random_food():
     if food.x >= -150 and food.x <=150:#Se mueve en dirección x
         food.x += randrange(-1,2) * 10
 
-    if food.x >= -150 and food.x <=150:#Se mueve en dirección y
-        food.x += randrange(-1,2) * 10
+    if food.y >= -150 and food.y <=150:#Se mueve en dirección y
+        food.y += randrange(-1,2) * 10
 
 
     
@@ -60,6 +60,7 @@ def move():
         print('Snake:', len(snake))
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
+
     else:
         snake.pop(0)
 
@@ -67,6 +68,16 @@ def move():
     for body in snake:
         square(body.x, body.y, 9, colores[numero])
     square(food.x, food.y, 9, colores[numero2])
+    if randrange(10) == 1:
+        food.x += 10
+    if randrange(10) == 2:
+        food.x -= 10
+    if randrange(10) == 3:
+        food.y += 10
+    if randrange(10) == 4:
+        food.y -= 10
+
+        
     update()
     ontimer(move, 100)
 
