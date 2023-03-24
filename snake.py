@@ -33,15 +33,6 @@ def inside(head):
     """Return True if head inside boundaries."""
     return -200 < head.x < 190 and -200 < head.y < 190
 
-def random_food():
-    """Randomizes the position of the food by one square wleaving the window"""
-    """Esta función permitirá que la comida pueda moverse de manera random""" 
-    if food.x >= -150 and food.x <=150:#Se mueve en dirección x
-        food.x += randrange(-1,2) * 10
-
-    if food.y >= -150 and food.y <=150:#Se mueve en dirección y
-        food.y += randrange(-1,2) * 10
-
 
     
 def move():
@@ -68,11 +59,11 @@ def move():
     for body in snake:
         square(body.x, body.y, 9, colores[numero])
     square(food.x, food.y, 9, colores[numero2])
-    if randrange(10) == 1:
+    if randrange(10) == 1: #se mueve la comida en poscion x
         food.x += 10
     if randrange(10) == 2:
         food.x -= 10
-    if randrange(10) == 3:
+    if randrange(10) == 3:#se mueve la comida en poscion x
         food.y += 10
     if randrange(10) == 4:
         food.y -= 10
